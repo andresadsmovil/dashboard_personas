@@ -148,6 +148,11 @@ view: binnicle_self_service {
     type: sum
     sql: ${spend} ;;
   }
+  measure: sum_spend_usd {
+    group_label: "Measures"
+    type: sum
+    sql: ${spend_usd} ;;
+  }
   measure: sum_video_completes {
     group_label: "Measures"
     type: sum
