@@ -133,6 +133,46 @@ view: binnicle_self_service {
     type: number
     sql: ${TABLE}.video_completes ;;
   }
+  measure: sum_clicks {
+  group_label: "Measures"
+  type: sum
+  sql: ${clicks} ;;
+  }
+  measure: sum_impressions {
+    group_label: "Measures"
+    type: sum
+    sql: ${impressions} ;;
+  }
+  measure: sum_spend {
+    group_label: "Measures"
+    type: sum
+    sql: ${spend} ;;
+  }
+  measure: sum_video_completes {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_completes} ;;
+  }
+  measure: max_cpc {
+    group_label: "Measures"
+    type: max
+    sql: ${cpc} ;;
+  }
+  measure: max_cpm {
+    group_label: "Measures"
+    type: max
+    sql: ${cpm} ;;
+  }
+  measure: max_margin {
+    group_label: "Measures"
+    type: max
+    sql: ${margin} ;;
+  }
+  measure: sum_ctr {
+    group_label: "Measures"
+    type: sum
+    sql: ${ctr} ;;
+  }
   measure: count {
     type: count
     drill_fields: [creative_name, campaign_name, account_name, advertiser_name]
