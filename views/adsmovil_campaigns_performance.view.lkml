@@ -178,6 +178,26 @@ view: binnicle_self_service {
     type: sum
     sql: ${ctr} ;;
   }
+  measure: max_campaign_budget {
+    group_label: "Measures"
+    type: sum
+    sql: ${campaign_budget} ;;
+  }
+  measure: max_campaign_day {
+    group_label: "Measures"
+    type: max
+    sql: ${campaign_day} ;;
+  }
+  measure: max_campaign_in_flight_days {
+    group_label: "Measures"
+    type: max
+    sql: ${campaign_in_flight_days} ;;
+  }
+  measure: max_campaign_remaining_days {
+    group_label: "Measures"
+    type: max
+    sql: ${campaign_remaining_days} ;;
+  }
   measure: count {
     type: count
     drill_fields: [creative_name, campaign_name, account_name, advertiser_name]
