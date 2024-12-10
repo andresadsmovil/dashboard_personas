@@ -11,4 +11,4 @@ datagroup: campaign_usa_default_datagroup {
 persist_with: campaign_usa_default_datagroup
 
 
-explore: binnicle_self_service {}
+explore: adsmovil_campaigns_performance {}

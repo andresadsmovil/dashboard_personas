@@ -1,5 +1,5 @@
-view: binnicle_self_service {
-  sql_table_name: `looker_ml.binnicle_self_service` ;;
+view: adsmovil_campaigns_performance {
+  sql_table_name: `looker_ml.adsmovil_campaigns_performance` ;;
 
   dimension: account_name {
     type: string
