@@ -7,7 +7,7 @@ view: binnicle_self_service {
   }
   dimension: account_id {
     type: string
-    sql: CAST(${TABLE}.account_id AS int64) ;;
+    sql: CAST(${TABLE}.account_id AS string) ;;
   }
   dimension: account_type {
     type: string
@@ -27,8 +27,8 @@ view: binnicle_self_service {
     sql: ${TABLE}.campaign_day ;;
   }
   dimension: campaign_id {
-    type: number
-    sql: ${TABLE}.campaign_id ;;
+    type: string
+    sql: CAST(${TABLE}.campaign_id AS string) ;;
   }
   dimension: campaign_in_flight_days {
     type: number
