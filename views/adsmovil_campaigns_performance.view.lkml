@@ -17,6 +17,7 @@ view: binnicle_self_service {
     type: number
     sql: ${TABLE}.campaign_budget ;;
   }
+
   dimension: campaign_day {
     type: number
     sql: ${TABLE}.campaign_day ;;
