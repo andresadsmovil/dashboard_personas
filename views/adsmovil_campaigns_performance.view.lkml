@@ -5,6 +5,10 @@ view: binnicle_self_service {
     type: string
     sql: ${TABLE}.account_name ;;
   }
+  dimension: account_id {
+    type: string
+    sql: CAST(${TABLE}.account_id AS int64) ;;
+  }
   dimension: account_type {
     type: string
     sql: ${TABLE}.ACCOUNT_TYPE ;;
