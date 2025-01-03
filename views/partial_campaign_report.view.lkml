@@ -67,7 +67,7 @@ view: partial_campaign_report {
     type: number
     sql: ${TABLE}.impressions ;;
   }
-  dimension: line {
+  dimension: CID {
     type: string
     sql: ${TABLE}.line ;;
   }
@@ -116,7 +116,7 @@ view: partial_campaign_report {
   }
   measure: sum_impressions {
     group_label: "Measures"
-    type: max
+    type: sum
     sql: ${impressions} ;;
   }
   measure: sum_clicks {
@@ -128,6 +128,11 @@ view: partial_campaign_report {
     group_label: "Measures"
     type: max
     sql: ${object} ;;
+  }
+  measure: sum_campaign_delivered {
+    group_label: "Measures"
+    type: sum
+    sql: ${campaign_delivered} ;;
   }
   measure: count_user {
     group_label: "Measures"
