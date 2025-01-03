@@ -49,7 +49,7 @@ view: partial_campaign_report {
     sql: ${TABLE}.date ;;
   }
   dimension: day_of_week {
-    type: number
+    type: string
     sql: ${TABLE}.day_of_week ;;
   }
   dimension_group: end_date {
