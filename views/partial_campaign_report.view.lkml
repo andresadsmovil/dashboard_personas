@@ -33,6 +33,14 @@ view: partial_campaign_report {
     type: number
     sql: ${TABLE}.creative_id ;;
   }
+  dimension: creative_name {
+    type: string
+    sql: ${TABLE}.creative_name ;;
+  }
+  dimension: creative_size {
+    type: string
+    sql: ${TABLE}.creative_size ;;
+  }
   dimension_group: date {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
