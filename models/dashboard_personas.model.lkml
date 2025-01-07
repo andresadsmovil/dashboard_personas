@@ -12,3 +12,4 @@ persist_with: campaign_usa_default_datagroup
 
 
 explore: binnicle_self_service {}
+explore: partial_campaign_report {}
