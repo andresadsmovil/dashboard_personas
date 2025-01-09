@@ -10,6 +10,6 @@ project_name: "dashboard_personas"
 
 
   localization_settings: {
-    default_locale: "es"
+    default_locale: "es_ES"
     #localization_level: "strict"
     }
