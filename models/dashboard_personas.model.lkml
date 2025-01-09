@@ -13,3 +13,5 @@ persist_with: campaign_usa_default_datagroup
 
 explore: binnicle_self_service {}
 explore: partial_campaign_report {}
+explore: report_store_attribution_campaign {}
+explore: report_store_attribution_users {}

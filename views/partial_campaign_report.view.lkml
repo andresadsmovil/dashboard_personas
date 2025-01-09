@@ -4,8 +4,9 @@ view: partial_campaign_report {
   dimension: agency {
     type: string
     sql: ${TABLE}.agency ;;
+    label: "agency"
   }
-  dimension: anunciante {
+    dimension: anunciante {
     type: string
     sql: ${TABLE}.anunciante ;;
   }
@@ -25,6 +26,7 @@ view: partial_campaign_report {
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
+    label: "city"
   }
   dimension: clicks {
     type: number
@@ -72,10 +74,6 @@ view: partial_campaign_report {
     type: string
     sql: ${TABLE}.image_url ;;
     html: <img src='{{ value }}' width='50' height='50'>;;
-  }
-  dimension: impressions {
-    type: number
-    sql: ${TABLE}.impressions ;;
   }
   dimension: CID {
     type: string
@@ -127,7 +125,9 @@ view: partial_campaign_report {
   measure: sum_impressions {
     group_label: "Measures"
     type: sum
-    sql: ${impressions} ;;
+    label: "sum_impressions"
+    sql: ${TABLE}.impressions ;;
+
   }
   measure: sum_clicks {
     group_label: "Measures"
