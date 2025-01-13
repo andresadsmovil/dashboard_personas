@@ -1,10 +1,6 @@
 view: report_store_attribution_gender {
   sql_table_name: `looker_ml.report_store_attribution_gender` ;;
 
-  dimension: cant {
-    type: number
-    sql: ${TABLE}.cant ;;
-  }
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
@@ -15,5 +11,10 @@ view: report_store_attribution_gender {
   }
   measure: count {
     type: count
+  }
+  measure: count_user {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.cant ;;
   }
 }
