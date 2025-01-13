@@ -125,7 +125,7 @@ view: partial_campaign_report {
   measure: sum_impressions {
     group_label: "Measures"
     type: sum
-    label: "sum_impressions"
+    label: "impressions"
     sql: ${TABLE}.impressions ;;
 
   }
