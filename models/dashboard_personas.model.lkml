@@ -19,3 +19,4 @@ explore: report_store_attribution_campaign {}
 explore: report_store_attribution_users {}
 explore: report_store_attribution_finished {}
 explore: report_store_attribution_gender {}
+explore: report_audio_basis {}

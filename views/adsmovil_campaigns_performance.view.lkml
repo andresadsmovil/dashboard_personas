@@ -158,7 +158,7 @@ view: binnicle_self_service {
     group_label: "Measures"
     type: sum
     sql: ${spend_usd} ;;
-    value_format: "#,##0"
+    value_format: "$#,##0"
   }
   measure: sum_video_completes {
     group_label: "Measures"
