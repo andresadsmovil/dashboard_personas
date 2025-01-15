@@ -55,6 +55,12 @@ view: report_audio_basis {
     type: number
     sql: ${TABLE}.creative_id ;;
   }
+  dimension: hour {
+    type: number
+    sql: EXTRACT(HOUR FROM PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%S', ${bit_time})) ;;
+    description: "Hour extracted from bit_time"
+  }
+
   dimension_group: date {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
@@ -69,6 +75,28 @@ view: report_audio_basis {
     datatype: date
     sql: ${TABLE}.date_utc ;;
   }
+
+  dimension: day_of_week_number {
+    type: number
+    sql: CASE
+          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Monday' THEN 1
+          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Tuesday' THEN 2
+          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Wednesday' THEN 3
+          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Thursday' THEN 4
+          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Friday' THEN 5
+          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Saturday' THEN 6
+          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Sunday' THEN 7
+        END ;;
+    hidden: yes
+    description: "Número del día de la semana para ordenar"
+  }
+  dimension: day_of_week {
+    type: string
+    sql: FORMAT_TIMESTAMP('%A', ${date_date}) ;;
+    order_by_field: day_of_week_number
+    description: "Día de la semana ordenado correctamente"
+  }
+
   dimension: deal_id {
     type: string
     sql: ${TABLE}.deal_id ;;
@@ -135,18 +163,11 @@ view: report_audio_basis {
     type: string
     sql: ${TABLE}.user_type ;;
   }
-  dimension: video_complete {
-    type: number
-    sql: ${TABLE}.video_complete ;;
-  }
   dimension: video_skip {
     type: number
     sql: ${TABLE}.video_skip ;;
   }
-  dimension: video_start {
-    type: number
-    sql: ${TABLE}.video_start ;;
-  }
+
   measure: count {
     type: count
     drill_fields: [campaign_name, brand_name, app_name, deal_name]
@@ -156,9 +177,36 @@ view: report_audio_basis {
     type: sum
     sql: ${TABLE}.impressions ;;
   }
+  measure: video_start {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_start ;;
+  }
+  measure: video_complete {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_complete ;;
+  }
   measure: user_id {
     group_label: "Measures"
     type: count_distinct
     sql: ${TABLE}.user_id ;;
   }
+  measure: reach {
+    group_label: "Measures"
+    type: count_distinct
+    sql: ${TABLE}.auction_id ;;
+  }
+  measure: cumulative_imp {
+    type: number
+    sql: SUM(${impressions}) OVER (ORDER BY ${date_date}) ;;
+    description: "imp acumuladas"
+  }
+  measure: cumulative_weekly_impressions {
+    type: number
+    sql: SUM(${impressions}) OVER (PARTITION BY EXTRACT(ISOWEEK FROM ${date_date}), EXTRACT(ISOWEEK FROM ${date_date}) ORDER BY ${date_date}) ;;
+    description: "Impresiones acumuladas por semana"
+  }
+
+
 }
