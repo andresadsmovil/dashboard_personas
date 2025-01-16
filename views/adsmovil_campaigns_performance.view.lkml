@@ -152,7 +152,7 @@ view: binnicle_self_service {
     group_label: "Measures"
     type: sum
     sql: ${spend} ;;
-    value_format: "#,##0"
+    value_format: "$#,##0"
   }
   measure: sum_spend_usd {
     group_label: "Measures"
@@ -189,6 +189,7 @@ view: binnicle_self_service {
     group_label: "Measures"
     type: sum
     sql: ${campaign_budget} ;;
+    value_format: "$#,##0"
   }
   measure: max_campaign_day {
     group_label: "Measures"
