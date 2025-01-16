@@ -120,19 +120,11 @@ view: report_audio_basis {
     datatype: date
     sql: ${TABLE}.End_Date ;;
   }
-  dimension: first_quartile {
-    type: number
-    sql: ${TABLE}.first_quartile ;;
-  }
   dimension: media_spend {
     type: number
     sql: ${TABLE}.media_spend ;;
   }
-  dimension: midpoint {
-    type: number
-    sql: ${TABLE}.midpoint ;;
-  }
-  dimension: platform_browser {
+   dimension: platform_browser {
     type: string
     sql: ${TABLE}.platform_browser ;;
   }
@@ -151,10 +143,7 @@ view: report_audio_basis {
     datatype: date
     sql: ${TABLE}.Start_Date ;;
   }
-  dimension: third_quartile {
-    type: number
-    sql: ${TABLE}.third_quartile ;;
-  }
+
   dimension: total_spend {
     type: number
     sql: ${TABLE}.total_spend ;;
@@ -207,6 +196,19 @@ view: report_audio_basis {
     sql: SUM(${impressions}) OVER (PARTITION BY EXTRACT(ISOWEEK FROM ${date_date}), EXTRACT(ISOWEEK FROM ${date_date}) ORDER BY ${date_date}) ;;
     description: "Impresiones acumuladas por semana"
   }
-
-
+  measure: first_quartile {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.first_quartile ;;
+  }
+  measure: midpoint {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.midpoint ;;
+  }
+  measure: third_quartile {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.third_quartile ;;
+  }
 }
