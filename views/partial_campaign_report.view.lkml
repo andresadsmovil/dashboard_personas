@@ -15,8 +15,12 @@ view: partial_campaign_report {
     sql: ${TABLE}.campaign_delivered ;;
   }
   dimension: campaign_id {
-    type: number
-    sql: ${TABLE}.campaign_id ;;
+    type: string
+    sql: CAST(${TABLE}.campaign_id AS STRING) ;;
+  }
+  dimension: line_item_id {
+    type: string
+    sql: ${TABLE}.line_item_id ;;
   }
   dimension: campaign_name {
     type: string
@@ -143,6 +147,26 @@ view: partial_campaign_report {
     group_label: "Measures"
     type: sum
     sql: ${campaign_delivered} ;;
+  }
+  measure: video_completes {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_completes ;;
+  }
+  measure: video_q1s {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_q1s ;;
+  }
+  measure: video_midpoints {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_midpoints ;;
+  }
+  measure: video_q3s {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_q3s ;;
   }
   measure: count_user {
     group_label: "Measures"
