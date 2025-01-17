@@ -34,6 +34,10 @@ view: report_audio_basis {
     type: string
     sql: ${TABLE}.campaign_name ;;
   }
+  dimension: CID {
+    type: string
+    sql: ${TABLE}.CID;;
+  }
   dimension: carrier {
     type: string
     sql: ${TABLE}.carrier ;;
