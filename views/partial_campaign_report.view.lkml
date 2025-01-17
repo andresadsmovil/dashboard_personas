@@ -14,6 +14,10 @@ view: partial_campaign_report {
     type: number
     sql: ${TABLE}.campaign_delivered ;;
   }
+  dimension: account_id {
+    type: number
+    sql: ${TABLE}.account_id ;;
+  }
   dimension: campaign_id {
     type: string
     sql: CAST(${TABLE}.campaign_id AS STRING) ;;
