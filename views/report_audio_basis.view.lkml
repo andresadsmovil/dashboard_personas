@@ -80,24 +80,12 @@ view: report_audio_basis {
     sql: ${TABLE}.date_utc ;;
   }
 
-  dimension: day_of_week_number {
-    type: number
-    sql: CASE
-          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Monday' THEN 1
-          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Tuesday' THEN 2
-          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Wednesday' THEN 3
-          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Thursday' THEN 4
-          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Friday' THEN 5
-          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Saturday' THEN 6
-          WHEN FORMAT_TIMESTAMP('%A', ${date_date}) = 'Sunday' THEN 7
-        END ;;
-    hidden: yes
-    description: "Número del día de la semana para ordenar"
-  }
+
+
   dimension: day_of_week {
     type: string
-    sql: FORMAT_TIMESTAMP('%A', ${date_date}) ;;
-    order_by_field: day_of_week_number
+    sql:  ${TABLE}.day_of_week  ;;
+    order_by_field: day_of_week
     description: "Día de la semana ordenado correctamente"
   }
 
