@@ -86,8 +86,6 @@ view: report_audio_basis {
   dimension: day_of_week {
     type: string
     sql:  ${TABLE}.day_of_week  ;;
-    order_by_field: day_of_week
-    description: "Día de la semana ordenado correctamente"
   }
 
   dimension: deal_id {
