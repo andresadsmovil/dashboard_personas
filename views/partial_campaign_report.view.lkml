@@ -176,5 +176,5 @@ view: partial_campaign_report {
     group_label: "Measures"
     type: count_distinct
     sql: ${user_id} ;;
-  }
+}
 }

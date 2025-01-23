@@ -7,7 +7,7 @@ view: binnicle_self_service {
   }
   dimension: account_id {
     type: number
-    sql: account_id ;;
+    sql: ${TABLE}.account_id) ;;
   }
   dimension: account_type {
     type: string
@@ -205,6 +205,11 @@ view: binnicle_self_service {
     group_label: "Measures"
     type: max
     sql: ${campaign_remaining_days} ;;
+  }
+  measure: xrate {
+    group_label: "Measures"
+    type: max
+    sql: ${TABLE}.xrate ;;
   }
   measure: count {
     type: count
