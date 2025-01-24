@@ -7,7 +7,7 @@ view: binnicle_self_service {
   }
   dimension: account_id {
     type: number
-    sql: ${TABLE}.account_id) ;;
+    sql:sql: CAST(${TABLE}.account_id  AS STRING);;
   }
   dimension: account_type {
     type: string
