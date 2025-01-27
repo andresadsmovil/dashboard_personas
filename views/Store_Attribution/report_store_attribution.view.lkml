@@ -1,5 +1,5 @@
-view: report_store_attribution_finished {
-  sql_table_name: `adsmovil-reports.looker_ml.report_store_attribution_finished` ;;
+view: report_store_attribution {
+  sql_table_name: `looker_ml.report_store_attribution` ;;
 
   dimension: account_id {
     type: number
@@ -56,10 +56,6 @@ view: report_store_attribution_finished {
     type: string
     sql: ${TABLE}.deal_id ;;
   }
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
   dimension: lat {
     type: number
     sql: ${TABLE}.lat ;;
@@ -80,12 +76,6 @@ view: report_store_attribution_finished {
     type: number
     sql: ${TABLE}.lon ;;
   }
-  dimension: geolo {
-    type: location
-    sql_latitude: ${lat} ;;
-    sql_longitude: ${lon} ;;
-    # sql: ${TABLE}.device_lat ;;
-  }
   dimension: marca {
     type: string
     sql: ${TABLE}.marca ;;
@@ -105,10 +95,5 @@ view: report_store_attribution_finished {
   measure: count {
     type: count
     drill_fields: [line_item_name, campaign_name, account_name, advertiser_name, layer_name]
-  }
-  measure: count_user {
-    group_label: "Measures"
-    type: count_distinct
-    sql: ${user_id} ;;
   }
 }
