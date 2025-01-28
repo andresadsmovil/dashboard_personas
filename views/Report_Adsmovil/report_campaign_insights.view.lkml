@@ -33,8 +33,12 @@ view: report_campaign_insights {
     sql: ${TABLE}.advertiser_name ;;
   }
   dimension: age {
-    hidden: yes
+    type: string
     sql: ${TABLE}.age ;;
+  }
+  dimension: gender {
+    type: string
+    sql: ${TABLE}.gender ;;
   }
   dimension: app_bundle {
     type: string
@@ -75,10 +79,6 @@ view: report_campaign_insights {
   dimension: domain {
     type: string
     sql: ${TABLE}.domain ;;
-  }
-  dimension: gender {
-    hidden: yes
-    sql: ${TABLE}.gender ;;
   }
   dimension: line_item_id {
     type: number
