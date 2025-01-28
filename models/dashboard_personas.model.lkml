@@ -14,7 +14,6 @@ persist_with: campaign_usa_default_datagroup
 explore: binnicle_self_service {}
 explore: report_audio_basis {}
 explore: partial_campaign_report {}
-
 explore: report_campaign_insights {}
 
 
