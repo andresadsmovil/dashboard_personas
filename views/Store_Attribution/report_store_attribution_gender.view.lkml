@@ -32,4 +32,9 @@ view: report_store_attribution_gender {
   measure: count {
     type: count
   }
+  measure: user_distinct {
+    group_label: "Measures"
+    type: count_distinct
+    sql: ${TABLE}.user_id ;;
+  }
 }
