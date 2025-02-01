@@ -1,18 +1,3 @@
-# Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
-# explore: report_campaign_insights {
-#   hidden: yes
-#     join: report_campaign_insights__age {
-#       view_label: "Report Campaign Insights: Age"
-#       sql: LEFT JOIN UNNEST(${report_campaign_insights.age}) as report_campaign_insights__age ;;
-#       relationship: one_to_many
-#     }
-#     join: report_campaign_insights__gender {
-#       view_label: "Report Campaign Insights: Gender"
-#       sql: LEFT JOIN UNNEST(${report_campaign_insights.gender}) as report_campaign_insights__gender ;;
-#       relationship: one_to_many
-#     }
-# }
-
 view: report_campaign_insights {
   sql_table_name: `looker_ml.report_campaign_insights` ;;
 
@@ -124,24 +109,17 @@ view: report_campaign_insights {
     type: string
     sql: ${TABLE}.user_type ;;
   }
+  dimension: category {
+    type: string
+    sql: ${TABLE}.category ;;
+  }
   measure: count {
     type: count
     drill_fields: [line_item_name, campaign_name, account_name, app_name, advertiser_name]
   }
+  measure: count_user {
+    group_label: "Measures"
+    type: count_distinct
+    sql: ${user_id} ;;
+  }
 }
-
-# view: report_campaign_insights__age {
-
-#   dimension: report_campaign_insights__age {
-#     type: string
-#     sql: report_campaign_insights__age ;;
-#   }
-# }
-
-# view: report_campaign_insights__gender {
-
-#   dimension: report_campaign_insights__gender {
-#     type: string
-#     sql: report_campaign_insights__gender ;;
-#   }
-# }
