@@ -23,5 +23,5 @@ explore: report_campaign_insights {}
 explore: report_store_attribution_campaign {}
 explore: report_store_attribution {}
 explore: report_store_attribution_gender {}
-explore: report_store_attribution_points {}
+explore: report_store_attribution_pois {}
 explore: report_store_attribution_mobility {}

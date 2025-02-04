@@ -80,6 +80,10 @@ view: report_store_attribution {
     type: string
     sql: ${TABLE}.marca ;;
   }
+  dimension: time_in_place {
+    type: string
+    sql: ${TABLE}.time_in_place ;;
+  }
   dimension: nombre {
     type: string
     sql: ${TABLE}.nombre ;;
@@ -95,5 +99,10 @@ view: report_store_attribution {
   measure: count {
     type: count
     drill_fields: [line_item_name, campaign_name, account_name, advertiser_name, layer_name]
+  }
+  measure: minute_duration_Avg {
+    group_label: "Measures"
+    type: average
+    sql: ${TABLE}.minute_duration_Avg ;;
   }
 }

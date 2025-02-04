@@ -1,5 +1,5 @@
-view: report_store_attribution_points {
-  sql_table_name: `looker_ml.report_store_attribution_points` ;;
+view: report_store_attribution_pois {
+  sql_table_name: `looker_ml.report_store_attribution_pois` ;;
 
   dimension: campaign_id {
     type: number

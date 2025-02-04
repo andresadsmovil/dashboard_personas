@@ -60,9 +60,5 @@ view: report_store_attribution_campaign {
     type: sum
     sql: ${TABLE}.frecuency ;;
   }
-  measure: minute_duration_Avg {
-    group_label: "Measures"
-    type: average
-    sql: ${TABLE}.minute_duration_Avg ;;
-  }
+
 }
