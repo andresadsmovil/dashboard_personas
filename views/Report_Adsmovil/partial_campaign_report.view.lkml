@@ -24,7 +24,7 @@ view: partial_campaign_report {
   }
   dimension: line_item_id {
     type: string
-    sql: ${TABLE}.line_item_id ;;
+    sql:CAST(${TABLE}.line_item_id AS STRING);;
   }
   dimension: campaign_name {
     type: string
@@ -135,12 +135,14 @@ view: partial_campaign_report {
     type: sum
     label: "impressions"
     sql: ${TABLE}.impressions ;;
+    value_format: "#,##0"
 
   }
   measure: sum_clicks {
     group_label: "Measures"
     type: sum
     sql: ${clicks} ;;
+    value_format: "#,##0"
   }
   measure: max_object {
     group_label: "Measures"
