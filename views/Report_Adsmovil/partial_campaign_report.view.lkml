@@ -153,6 +153,7 @@ view: partial_campaign_report {
     group_label: "Measures"
     type: sum
     sql: ${campaign_delivered} ;;
+    value_format: "#,##0"
   }
   measure: video_completes {
     group_label: "Measures"
