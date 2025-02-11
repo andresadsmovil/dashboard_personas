@@ -52,7 +52,7 @@ view: adsmovil_campaigns_performance_porcentage {
   }
   measure: porcentage {
     group_label: "Measures"
-    type: max
+    type: average
     sql: ${TABLE}.porcentage ;;
   }
 }
