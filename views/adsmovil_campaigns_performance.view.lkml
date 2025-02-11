@@ -138,6 +138,11 @@ view: binnicle_self_service {
     type: number
     sql: ${TABLE}.video_completes ;;
   }
+  measure: quantity {
+    group_label: "Measures"
+    type: max
+    sql: ${TABLE}.quantity ;;
+  }
   measure: sum_clicks {
   group_label: "Measures"
   type: sum
