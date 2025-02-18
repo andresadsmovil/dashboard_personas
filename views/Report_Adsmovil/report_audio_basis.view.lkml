@@ -143,6 +143,18 @@ view: report_audio_basis {
     type: string
     sql: ${TABLE}.user_type ;;
   }
+  dimension: Agency {
+    type: string
+    sql: ${TABLE}.agency ;;
+  }
+  dimension: Advertiser {
+    type: string
+    sql: ${TABLE}.advertiser ;;
+  }
+  dimension: Orden {
+    type: string
+    sql: ${TABLE}.orden ;;
+  }
   dimension: video_skip {
     type: number
     sql: ${TABLE}.video_skip ;;
