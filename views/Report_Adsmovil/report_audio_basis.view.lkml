@@ -187,7 +187,7 @@ view: report_audio_basis {
   measure: reach {
     group_label: "Measures"
     type: count_distinct
-    sql: CASE WHEN ${TABLE}.user_id IS NULL THEN  ${TABLE}.account_id
+    sql: CASE WHEN ${TABLE}.user_id IS NULL THEN  ${TABLE}.auction_id
     ELSE ${TABLE}.user_id
     END ;;
   }
