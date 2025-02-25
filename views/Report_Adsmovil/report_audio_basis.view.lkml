@@ -187,7 +187,9 @@ view: report_audio_basis {
   measure: reach {
     group_label: "Measures"
     type: count_distinct
-    sql: ${TABLE}.auction_id ;;
+    sql: CASE WHEN ${TABLE}.user_id IS NULL THEN  ${TABLE}.account_id
+    ELSE ${TABLE}.user_id
+    END ;;
   }
   measure: cumulative_imp {
     type: number
