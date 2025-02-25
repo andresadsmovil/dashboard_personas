@@ -126,6 +126,10 @@ view: partial_campaign_report {
     type: string
     sql: ${TABLE}.user_id ;;
   }
+  dimension: line_item_name {
+    type: string
+    sql: ${TABLE}.line_item_name ;;
+  }
   measure: count {
     type: count
     drill_fields: [campaign_name]
@@ -149,6 +153,13 @@ view: partial_campaign_report {
     type: max
     sql: ${object} ;;
   }
+  measure: spend {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.spend ;;
+    value_format: "$#,##0"
+  }
+
   measure: sum_campaign_delivered {
     group_label: "Measures"
     type: sum
