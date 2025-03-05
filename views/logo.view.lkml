@@ -8,6 +8,7 @@ view: logo {
   dimension: logo {
     type: string
     sql: ${TABLE}.logo ;;
+    html: "<img src='{{ logo }}' style='max-width: 100px; max-height: 50px;'/>" ;;
   }
   measure: count {
     type: count

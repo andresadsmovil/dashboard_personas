@@ -208,7 +208,7 @@ view: binnicle_self_service {
   }
   measure: max_campaign_remaining_days {
     group_label: "Measures"
-    type: max
+    type: min
     sql: ${campaign_remaining_days} ;;
   }
   measure: xrate {

@@ -14,6 +14,7 @@ persist_with: campaign_usa_default_datagroup
 explore: binnicle_self_service {}
 explore: adsmovil_campaigns_performance_porcentage {}
 
+explore:  logo{}
 
 explore: report_audio_basis {}
 explore: partial_campaign_report {}
