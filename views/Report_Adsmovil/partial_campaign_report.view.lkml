@@ -133,6 +133,7 @@ view: partial_campaign_report {
   dimension: logo {
     type: string
     sql: ${TABLE}.logo ;;
+    html: <img src='{{ value }}' width='250' height='50'>;;
   }
   measure: count {
     type: count
