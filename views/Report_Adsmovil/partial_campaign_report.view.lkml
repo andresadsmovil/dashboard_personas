@@ -130,6 +130,10 @@ view: partial_campaign_report {
     type: string
     sql: ${TABLE}.line_item_name ;;
   }
+  dimension: logo {
+    type: string
+    sql: ${TABLE}.logo ;;
+  }
   measure: count {
     type: count
     drill_fields: [campaign_name]
