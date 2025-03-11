@@ -1,5 +1,5 @@
-view: report_store_attribution_pois {
-  sql_table_name: `looker_ml.report_store_attribution_pois` ;;
+view: report_pois {
+  sql_table_name: `adsmovil-reports.store_attribution.report_pois` ;;
 
   dimension: campaign_id {
     type: number

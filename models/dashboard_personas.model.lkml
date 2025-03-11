@@ -14,7 +14,6 @@ persist_with: campaign_usa_default_datagroup
 explore: binnicle_self_service {}
 explore: adsmovil_campaigns_performance_porcentage {}
 
-explore:  logo{}
 
 explore: report_audio_basis {}
 explore: partial_campaign_report {}
@@ -25,8 +24,9 @@ explore: report_campaign_insights {}
 
 ## Store Attribution
 
-explore: report_store_attribution_campaign {}
-explore: report_store_attribution {}
-explore: report_store_attribution_gender {}
-explore: report_store_attribution_pois {}
-explore: report_store_attribution_mobility {}
+explore: report_campaign {}
+explore: report_gender {}
+explore: report_pois {}
+explore: report_mobility {}
+explore: report_mobility_attribution {}
+explore: report_mobility_clicks {}

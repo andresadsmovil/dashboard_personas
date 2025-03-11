@@ -1,5 +1,5 @@
-view: report_store_attribution_gender {
-  sql_table_name: `looker_ml.report_store_attribution_gender` ;;
+view: report_gender {
+  sql_table_name: `adsmovil-reports.store_attribution.report_gender` ;;
 
   dimension: age {
     type: string
@@ -8,14 +8,6 @@ view: report_store_attribution_gender {
   dimension: campaign_id {
     type: number
     sql: ${TABLE}.campaign_id ;;
-  }
-  dimension: codigo_estado {
-    type: string
-    sql: ${TABLE}.codigo_estado ;;
-  }
-  dimension: codigo_municipio {
-    type: string
-    sql: ${TABLE}.codigo_municipio ;;
   }
   dimension: gender {
     type: string
@@ -31,10 +23,5 @@ view: report_store_attribution_gender {
   }
   measure: count {
     type: count
-  }
-  measure: user_distinct {
-    group_label: "Measures"
-    type: count_distinct
-    sql: ${TABLE}.user_id ;;
   }
 }
