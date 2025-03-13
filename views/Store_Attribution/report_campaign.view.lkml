@@ -9,36 +9,12 @@ view: report_campaign {
     type: string
     sql: ${TABLE}.campaign_name ;;
   }
-  dimension: clicks {
-    type: number
-    sql: ${TABLE}.clicks ;;
-  }
-  dimension: ctr {
-    type: number
-    sql: ${TABLE}.CTR ;;
-  }
-  dimension: delivery_porcentage {
-    type: number
-    sql: ${TABLE}.delivery_porcentage ;;
-  }
   dimension_group: end {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.end_date ;;
-  }
-  dimension: frecuency {
-    type: number
-    sql: ${TABLE}.frecuency ;;
-  }
-  dimension: impressions {
-    type: number
-    sql: ${TABLE}.impressions ;;
-  }
-  dimension: reach {
-    type: number
-    sql: ${TABLE}.reach ;;
   }
   dimension_group: start {
     type: time
@@ -54,5 +30,35 @@ view: report_campaign {
   measure: count {
     type: count
     drill_fields: [campaign_name]
+  }
+  measure: clicks {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.clicks ;;
+  }
+  measure: impressions {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.impressions ;;
+  }
+  measure: reach {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.reach ;;
+  }
+  measure: frecuency {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.frecuency ;;
+  }
+  measure: ctr {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.ctr ;;
+  }
+  measure: delivery_porcentage {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.delivery_porcentage ;;
   }
 }
