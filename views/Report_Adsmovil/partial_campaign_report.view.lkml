@@ -20,7 +20,7 @@ view: partial_campaign_report {
   }
   dimension: campaign_id {
     type: string
-    sql: CAST(${TABLE}.campaign_id AS STRING) ;;
+    sql: ${TABLE}.campaign_id ;;
   }
   dimension: line_item_id {
     type: string

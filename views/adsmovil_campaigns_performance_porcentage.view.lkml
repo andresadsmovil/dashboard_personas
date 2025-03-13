@@ -25,6 +25,13 @@ view: adsmovil_campaigns_performance_porcentage {
     type: number
     sql: ${TABLE}.clicks ;;
   }
+  dimension_group: date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.date ;;
+  }
   dimension: country {
     type: string
     map_layer_name: countries
