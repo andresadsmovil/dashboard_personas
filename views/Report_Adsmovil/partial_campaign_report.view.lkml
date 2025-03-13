@@ -24,7 +24,7 @@ view: partial_campaign_report {
   }
   dimension: line_item_id {
     type: string
-    sql:CAST(${TABLE}.line_item_id AS STRING);;
+    sql:${TABLE}.line_item_id;;
   }
   dimension: campaign_name {
     type: string
