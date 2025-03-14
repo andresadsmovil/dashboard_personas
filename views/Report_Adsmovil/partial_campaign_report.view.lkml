@@ -19,8 +19,8 @@ view: partial_campaign_report {
     sql: ${TABLE}.account_id ;;
   }
   dimension: campaign_id {
-    type: string
-    sql: CAST(${TABLE}.campaign_id AS STRING) ;;
+    type: number
+    sql:${TABLE}.campaign_id  ;;
   }
   dimension: line_item_id {
     type: string
