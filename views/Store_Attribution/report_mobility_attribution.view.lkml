@@ -16,6 +16,10 @@ view: report_mobility_attribution {
     type: string
     sql: ${TABLE}.day_of_week ;;
   }
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
   dimension: lat {
     type: number
     sql: ${TABLE}.lat ;;
