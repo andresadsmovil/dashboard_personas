@@ -10,7 +10,7 @@ view: adsmovil_campaigns_performance_porcentage {
     sql: ${TABLE}.campaign_budget ;;
   }
   dimension: account_id {
-    type: number
+    type: string
     sql: CAST(${TABLE}.account_id  AS STRING);;
   }
   dimension: campaign_id {
