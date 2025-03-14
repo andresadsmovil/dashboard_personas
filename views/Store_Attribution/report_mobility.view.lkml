@@ -24,15 +24,16 @@ view: report_mobility {
     type: number
     sql: ${TABLE}.lon ;;
   }
-  dimension: qty_user {
-    type: number
-    sql: ${TABLE}.qty_user ;;
-  }
   dimension: time_in_place {
     type: string
     sql: ${TABLE}.time_in_place ;;
   }
   measure: count {
     type: count
+  }
+  measure: qty_user {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.qty_user ;;
   }
 }
