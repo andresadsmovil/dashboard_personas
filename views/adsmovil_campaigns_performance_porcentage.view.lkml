@@ -11,7 +11,7 @@ view: adsmovil_campaigns_performance_porcentage {
   }
   dimension: account_id {
     type: number
-    sql: ${TABLE}.account_id ;;
+    sql: CAST(${TABLE}.account_id  AS STRING);;
   }
   dimension: campaign_id {
     type: number
