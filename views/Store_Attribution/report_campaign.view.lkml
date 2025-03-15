@@ -56,6 +56,11 @@ view: report_campaign {
     type: sum
     sql: ${TABLE}.ctr ;;
   }
+  measure: spend_usd {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.spend_usd ;;
+  }
   measure: delivery_porcentage {
     group_label: "Measures"
     type: sum

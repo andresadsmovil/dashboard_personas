@@ -173,12 +173,12 @@ view: binnicle_self_service {
   measure: video_plays {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.video_plays}  ;;
+    sql: ${TABLE}.video_plays  ;;
   }
   measure: audio_plays {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.audio_plays}  ;;
+    sql: ${TABLE}.audio_plays  ;;
   }
   measure: max_cpc {
     group_label: "Measures"

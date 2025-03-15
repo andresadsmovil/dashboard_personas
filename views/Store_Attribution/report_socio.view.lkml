@@ -1,21 +1,17 @@
-view: report_gender {
-  sql_table_name: `adsmovil-reports.store_attribution.report_gender` ;;
+view: report_socio {
+  sql_table_name: `adsmovil-reports.store_attribution.report_socio` ;;
 
-  dimension: age {
-    type: string
-    sql: ${TABLE}.age ;;
-  }
   dimension: campaign_id {
     type: number
     sql: ${TABLE}.campaign_id ;;
   }
-  dimension: gender {
+  dimension: city_residence {
     type: string
-    sql: ${TABLE}.gender ;;
+    sql: ${TABLE}.city_residence ;;
   }
-  dimension: nombre {
+  dimension: nivsocio {
     type: string
-    sql: ${TABLE}.nombre ;;
+    sql: ${TABLE}.nivsocio ;;
   }
   dimension: user_id {
     type: string

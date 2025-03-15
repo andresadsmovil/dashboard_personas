@@ -16,9 +16,21 @@ view: report_mobility_attribution {
     type: string
     sql: ${TABLE}.day_of_week ;;
   }
+  dimension: state {
+    type: string
+    sql: ${TABLE}.dpto ;;
+  }
+  dimension: city {
+    type: string
+    sql: ${TABLE}.ciudad ;;
+  }
+  dimension: neighborhood {
+    type: string
+    sql: ${TABLE}.localidad_barrio ;;
+  }
   dimension: name {
     type: string
-    sql: ${TABLE}.name ;;
+    sql: ${TABLE}.nombre ;;
   }
   dimension: lat {
     type: number
