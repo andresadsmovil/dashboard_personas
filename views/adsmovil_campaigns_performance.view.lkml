@@ -104,6 +104,10 @@ view: binnicle_self_service {
     type: number
     sql: ${TABLE}.line_item_id ;;
   }
+  dimension: line_item_name {
+    type: string
+    sql: ${TABLE}.line_item_name ;;
+  }
   dimension: line_item_spend {
     type: number
     sql: ${TABLE}.line_item_spend ;;
