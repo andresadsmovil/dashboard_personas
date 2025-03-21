@@ -57,7 +57,7 @@ view: partial_campaign_report {
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.date ;;
+    sql: ${TABLE}.date_of_log_wins ;;
   }
   dimension: day_of_week {
     type: string
