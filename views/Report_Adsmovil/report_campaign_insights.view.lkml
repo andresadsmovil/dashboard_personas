@@ -1,5 +1,5 @@
 view: report_campaign_insights {
-  sql_table_name: `looker_ml.report_campaign_insights` ;;
+  sql_table_name: `Adsmovil_Reports.report_campaign_insights` ;;
 
   dimension: account_id {
     type: number
