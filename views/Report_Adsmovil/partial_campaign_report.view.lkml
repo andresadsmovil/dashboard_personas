@@ -1,5 +1,5 @@
 view: partial_campaign_report {
-  sql_table_name: `adsmovil-reports.looker_ml.partial_campaign_report` ;;
+  sql_table_name: `adsmovil-reports.Adsmovil_Reports.partial_campaign_report` ;;
 
   dimension: agency {
     type: string
