@@ -17,6 +17,7 @@ explore: adsmovil_campaigns_performance_porcentage {}
 
 explore: report_audio_basis {}
 explore: partial_campaign_report {}
+explore: global_metrics_campaign {}
 explore: report_campaign_insights {}
 
 
