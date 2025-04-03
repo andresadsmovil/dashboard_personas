@@ -8,37 +8,37 @@ view: global_metrics_campaign {
   measure: count {
     type: count
   }
-  measure: impressions {
+  measure: global_impressions {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.impressions ;;
     value_format: "#,##0"
   }
-  measure: clicks {
+  measure: global_clicks {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.clicks ;;
     value_format: "#,##0"
   }
-  measure: video_completes {
+  measure: global_video_completes {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.video_completes ;;
     value_format: "#,##0"
   }
-  measure: video_plays {
+  measure: global_video_plays {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.video_plays ;;
     value_format: "#,##0"
   }
-  measure: spend_usd {
+  measure: global_spend_usd {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.spend_usd ;;
     value_format: "#,##0"
   }
-  measure: spend {
+  measure: global_spend {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.spend ;;
