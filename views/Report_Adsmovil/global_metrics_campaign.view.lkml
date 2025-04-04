@@ -51,4 +51,9 @@ view: global_metrics_campaign {
     sql: ${TABLE}.audio_plays ;;
     value_format: "#,##0"
   }
+  measure: quantity {
+    type: sum
+    sql: ${TABLE}.quantity ;;
+    value_format: "#,##0"
+  }
 }
