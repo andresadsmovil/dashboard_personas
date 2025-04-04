@@ -41,4 +41,14 @@ view: global_metrics_campaign {
     sql: ${TABLE}.campaign_delivered ;;
     value_format: "#,##0"
   }
+  measure: audio_completes {
+    type: sum
+    sql: ${TABLE}.audio_completes ;;
+    value_format: "#,##0"
+  }
+  measure: audio_plays {
+    type: sum
+    sql: ${TABLE}.audio_plays ;;
+    value_format: "#,##0"
+  }
 }

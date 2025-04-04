@@ -15,7 +15,13 @@ explore: binnicle_self_service {}
 explore: adsmovil_campaigns_performance_porcentage {}
 
 
-explore: report_audio_basis {}
+explore: report_audio_basis {
+  join: global_metrics_campaign {
+    type: inner
+    sql_on: ${report_audio_basis.campaign_id} = ${global_metrics_campaign.campaign_id} ;;
+    relationship: many_to_one
+  }
+}
 
 explore: global_metrics_campaign {}
 
