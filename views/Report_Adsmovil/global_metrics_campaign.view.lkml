@@ -5,41 +5,38 @@ view: global_metrics_campaign {
     type: number
     sql: ${TABLE}.campaign_id ;;
   }
-  measure: count {
-    type: count
+  dimension: impressions_c {
+    type: number
+    sql: ${TABLE}.impressions ;;
   }
+
+
   measure: impressions {
-    group_label: "Measures"
     type: sum
     sql: ${TABLE}.impressions ;;
     value_format: "#,##0"
   }
   measure: clicks {
-    group_label: "Measures"
     type: sum
     sql: ${TABLE}.clicks ;;
     value_format: "#,##0"
   }
   measure: video_completes {
-    group_label: "Measures"
     type: sum
     sql: ${TABLE}.video_completes ;;
     value_format: "#,##0"
   }
   measure: video_plays {
-    group_label: "Measures"
     type: sum
     sql: ${TABLE}.video_plays ;;
     value_format: "#,##0"
   }
   measure: spend_usd {
-    group_label: "Measures"
     type: sum
     sql: ${TABLE}.spend_usd ;;
     value_format: "#,##0"
   }
   measure: spend {
-    group_label: "Measures"
     type: sum
     sql: ${TABLE}.spend ;;
     value_format: "#,##0"
