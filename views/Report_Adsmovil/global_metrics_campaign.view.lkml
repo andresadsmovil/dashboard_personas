@@ -3,14 +3,9 @@ view: global_metrics_campaign {
 
   dimension: campaign_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.campaign_id ;;
   }
-  dimension: impressions_c {
-    type: number
-    sql: ${TABLE}.impressions ;;
-  }
-
-
   measure: impressions {
     type: sum
     sql: ${TABLE}.impressions ;;
@@ -39,6 +34,11 @@ view: global_metrics_campaign {
   measure: spend {
     type: sum
     sql: ${TABLE}.spend ;;
+    value_format: "#,##0"
+  }
+  measure: campaign_delivered {
+    type: sum
+    sql: ${TABLE}.campaign_delivered ;;
     value_format: "#,##0"
   }
 }

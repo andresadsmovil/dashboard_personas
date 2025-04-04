@@ -20,6 +20,7 @@ view: partial_campaign_report {
   }
   dimension: campaign_id {
     type: number
+    primary_key: yes
     sql:${TABLE}.campaign_id  ;;
   }
   dimension: line_item_id {
