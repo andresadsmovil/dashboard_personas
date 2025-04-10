@@ -3,11 +3,16 @@ view: report_campaign {
 
   dimension: campaign_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.campaign_id ;;
   }
   dimension: campaign_name {
     type: string
     sql: ${TABLE}.campaign_name ;;
+  }
+  dimension: campaign_id_grouped {
+    type: string
+    sql: ${TABLE}.campaign_id_grouped ;;
   }
   dimension_group: end {
     type: time

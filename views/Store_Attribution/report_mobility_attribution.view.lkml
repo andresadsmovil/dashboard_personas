@@ -3,6 +3,7 @@ view: report_mobility_attribution {
 
   dimension: campaign_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.campaign_id ;;
   }
   dimension_group: date {

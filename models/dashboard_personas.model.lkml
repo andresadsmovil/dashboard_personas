@@ -41,7 +41,14 @@ explore: report_campaign_insights {}
 
 ## Store Attribution
 
-explore: report_campaign {}
+explore: report_campaign {
+  join: report_mobility_attribution {
+    type: inner
+    sql_on: ${report_campaign.campaign_id} = ${report_campaign.campaign_id} ;;
+    relationship: one_to_one
+  }
+}
+
 explore: report_gender {}
 explore: report_pois {}
 explore: report_mobility {}
