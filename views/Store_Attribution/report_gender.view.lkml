@@ -7,7 +7,12 @@ view: report_gender {
   }
   dimension: campaign_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.campaign_id ;;
+  }
+  dimension: campaign_id_grouped {
+    type: string
+    sql: ${TABLE}.campaign_id_grouped ;;
   }
   dimension: gender {
     type: string
