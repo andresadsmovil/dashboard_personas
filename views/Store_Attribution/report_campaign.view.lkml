@@ -28,10 +28,6 @@ view: report_campaign {
     datatype: date
     sql: ${TABLE}.start_date ;;
   }
-  dimension: total_sales {
-    type: number
-    sql: ${TABLE}.total_sales ;;
-  }
   measure: count {
     type: count
     drill_fields: [campaign_name]
@@ -58,7 +54,7 @@ view: report_campaign {
   }
   measure: ctr {
     group_label: "Measures"
-    type: sum
+    type: average
     sql: ${TABLE}.ctr ;;
   }
   measure: spend_usd {
@@ -70,5 +66,10 @@ view: report_campaign {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.delivery_porcentage ;;
+  }
+  measure: total_sales {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.total_sales ;;
   }
 }
