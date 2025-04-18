@@ -53,3 +53,7 @@ explore: report_pois {}
 explore: report_mobility {}
 explore: report_mobility_attribution {}
 explore: report_mobility_clicks {}
+
+## publisher
+
+explore: publisher {}
