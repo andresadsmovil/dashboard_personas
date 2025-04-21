@@ -49,7 +49,7 @@ view: report_campaign {
   }
   measure: frecuency {
     group_label: "Measures"
-    type: sum
+    type: average
     sql: ${TABLE}.frecuency ;;
   }
   measure: ctr {

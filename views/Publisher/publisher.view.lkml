@@ -74,10 +74,6 @@ view: publisher {
     type: string
     sql: ${TABLE}.publisher_name ;;
   }
-  dimension: request {
-    type: number
-    sql: ${TABLE}.request ;;
-  }
   dimension: sales_channel {
     type: string
     sql: ${TABLE}.sales_channel ;;
@@ -133,5 +129,9 @@ view: publisher {
   measure: negotiation_price {
     type: max
     sql: ${TABLE}.negotiation_price ;;
+  }
+  measure: request {
+    type: max
+    sql: ${TABLE}.request ;;
   }
 }
