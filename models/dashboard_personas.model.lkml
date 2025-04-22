@@ -15,8 +15,25 @@ explore: binnicle_self_service {}
 explore: adsmovil_campaigns_performance_porcentage {}
 
 
-explore: report_audio_basis {}
-explore: partial_campaign_report {}
+explore: report_audio_basis {
+  join: global_metrics_campaign {
+    type: inner
+    sql_on: ${report_audio_basis.campaign_id} = ${global_metrics_campaign.campaign_id} ;;
+    relationship: many_to_one
+  }
+}
+
+explore: global_metrics_campaign {}
+
+
+explore: partial_campaign_report {
+  join: global_metrics_campaign {
+    type: inner
+    sql_on: ${partial_campaign_report.campaign_id} = ${global_metrics_campaign.campaign_id} ;;
+    relationship: many_to_one
+  }
+}
+
 explore: report_campaign_insights {}
 explore: adsmovil_campaign_reports {}
 
@@ -24,8 +41,19 @@ explore: adsmovil_campaign_reports {}
 
 ## Store Attribution
 
-explore: report_store_attribution_campaign {}
-explore: report_store_attribution {}
-explore: report_store_attribution_gender {}
-explore: report_store_attribution_pois {}
-explore: report_store_attribution_mobility {}
+explore: report_campaign {
+  join: report_mobility_attribution {
+    type: inner
+    sql_on: ${report_campaign.campaign_id} = ${report_campaign.campaign_id} ;;
+    relationship: one_to_one
+  }
+}
+
+explore: report_pois {}
+explore: report_mobility {}
+explore: report_mobility_attribution {}
+explore: report_mobility_clicks {}
+
+## publisher
+
+explore: publisher {}

@@ -9,6 +9,10 @@ view: adsmovil_campaigns_performance_porcentage {
     type: number
     sql: ${TABLE}.campaign_budget ;;
   }
+  dimension: account_id {
+    type: string
+    sql: CAST(${TABLE}.account_id  AS STRING);;
+  }
   dimension: campaign_id {
     type: number
     sql: ${TABLE}.campaign_id ;;
@@ -20,6 +24,13 @@ view: adsmovil_campaigns_performance_porcentage {
   dimension: clicks {
     type: number
     sql: ${TABLE}.clicks ;;
+  }
+  dimension_group: date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.date ;;
   }
   dimension: country {
     type: string

@@ -1,5 +1,5 @@
 view: partial_campaign_report {
-  sql_table_name: `adsmovil-reports.looker_ml.partial_campaign_report` ;;
+  sql_table_name: `adsmovil-reports.Adsmovil_Reports.partial_campaign_report` ;;
 
   dimension: agency {
     type: string
@@ -19,12 +19,13 @@ view: partial_campaign_report {
     sql: ${TABLE}.account_id ;;
   }
   dimension: campaign_id {
-    type: string
-    sql: CAST(${TABLE}.campaign_id AS STRING) ;;
+    type: number
+    primary_key: yes
+    sql:${TABLE}.campaign_id  ;;
   }
   dimension: line_item_id {
     type: string
-    sql:CAST(${TABLE}.line_item_id AS STRING);;
+    sql:${TABLE}.line_item_id;;
   }
   dimension: campaign_name {
     type: string
@@ -129,6 +130,11 @@ view: partial_campaign_report {
   dimension: line_item_name {
     type: string
     sql: ${TABLE}.line_item_name ;;
+  }
+  dimension: logo {
+    type: string
+    sql: ${TABLE}.logo ;;
+    html: <img src='{{ value }}' width='250' height='50'>;;
   }
   measure: count {
     type: count

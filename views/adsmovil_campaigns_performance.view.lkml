@@ -104,6 +104,10 @@ view: binnicle_self_service {
     type: number
     sql: ${TABLE}.line_item_id ;;
   }
+  dimension: line_item_name {
+    type: string
+    sql: ${TABLE}.line_item_name ;;
+  }
   dimension: line_item_spend {
     type: number
     sql: ${TABLE}.line_item_spend ;;
@@ -169,6 +173,16 @@ view: binnicle_self_service {
     group_label: "Measures"
     type: sum
     sql: ${video_completes} ;;
+  }
+  measure: video_plays {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_plays  ;;
+  }
+  measure: audio_plays {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.audio_plays  ;;
   }
   measure: max_cpc {
     group_label: "Measures"

@@ -1,21 +1,18 @@
-view: report_store_attribution_campaign {
-  sql_table_name: `looker_ml.report_store_attribution_campaign` ;;
+view: report_campaign {
+  sql_table_name: `adsmovil-reports.store_attribution.report_campaign` ;;
 
   dimension: campaign_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.campaign_id ;;
   }
   dimension: campaign_name {
     type: string
     sql: ${TABLE}.campaign_name ;;
   }
-  dimension: ctr {
-    type: number
-    sql: ${TABLE}.CTR ;;
-  }
-  dimension: delivery_porcentage {
-    type: number
-    sql: ${TABLE}.delivery_porcentage ;;
+  dimension: campaign_id_grouped {
+    type: string
+    sql: ${TABLE}.campaign_id_grouped ;;
   }
   dimension_group: end {
     type: time
@@ -35,20 +32,15 @@ view: report_store_attribution_campaign {
     type: count
     drill_fields: [campaign_name]
   }
-  measure: impressions {
-    group_label: "Measures"
-    type: sum
-    sql: ${TABLE}.impressions ;;
-  }
   measure: clicks {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.clicks ;;
   }
-  measure: total_sales {
+  measure: impressions {
     group_label: "Measures"
-    type: max
-    sql: ${TABLE}.total_sales ;;
+    type: sum
+    sql: ${TABLE}.impressions ;;
   }
   measure: reach {
     group_label: "Measures"
@@ -57,8 +49,32 @@ view: report_store_attribution_campaign {
   }
   measure: frecuency {
     group_label: "Measures"
-    type: sum
+    type: average
     sql: ${TABLE}.frecuency ;;
   }
-
+  measure: ctr {
+    group_label: "Measures"
+    type: average
+    sql: ${TABLE}.ctr ;;
+  }
+  measure: spend_usd {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.spend_usd ;;
+  }
+  measure: delivery_porcentage {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.delivery_porcentage ;;
+  }
+  measure: total_sales {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.total_sales ;;
+  }
+  measure: objetive {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.object ;;
+  }
 }
