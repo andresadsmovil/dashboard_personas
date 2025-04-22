@@ -72,4 +72,9 @@ view: report_campaign {
     type: sum
     sql: ${TABLE}.total_sales ;;
   }
+  measure: objetive {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.object ;;
+  }
 }
