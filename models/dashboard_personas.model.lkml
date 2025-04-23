@@ -35,7 +35,7 @@ explore: partial_campaign_report {
 }
 
 explore: report_campaign_insights {}
-
+explore: adsmovil_geo_reports_coord {}
 
 
 
@@ -53,6 +53,7 @@ explore: report_pois {}
 explore: report_mobility {}
 explore: report_mobility_attribution {}
 explore: report_mobility_clicks {}
+
 
 ## publisher
 
