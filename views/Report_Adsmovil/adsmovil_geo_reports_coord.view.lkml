@@ -1,6 +1,10 @@
 view: adsmovil_geo_reports_coord {
   sql_table_name: `adsmovil-reports.looker_ml.adsmovil_geo_reports_coord` ;;
 
+  dimension: Campaign_ID {
+    type: number
+    sql: ${TABLE}.campaign_id ;;
+  }
   dimension: poi_id {
     type: number
     sql: ${TABLE}.poi_id ;;
@@ -36,10 +40,7 @@ view: adsmovil_geo_reports_coord {
     type: average
     sql: ${TABLE}.avg_imp_distance_mts ;;
   }
-  measure: Campaign_ID {
-    type: number
-    sql: ${TABLE}.campaign_id ;;
-  }
+
   measure: Clicks {
     type: sum
     sql: ${TABLE}.clk ;;
