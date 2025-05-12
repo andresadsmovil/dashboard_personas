@@ -50,7 +50,7 @@ view: adsmovil_geo_reports_coord {
     sql: ${TABLE}.ctr ;;
   }
   measure: Freq {
-    type: max
+    type: sum
     sql: ${TABLE}.freq ;;
   }
   measure: Impressions {
@@ -58,7 +58,7 @@ view: adsmovil_geo_reports_coord {
     sql: ${TABLE}.imp ;;
   }
   measure: Uniques {
-    type: number
+    type: sum
     sql: ${TABLE}.uniques ;;
   }
 }
