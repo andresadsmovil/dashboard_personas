@@ -51,7 +51,7 @@ view: adsmovil_geo_reports_coord {
   }
   measure: Freq {
     type: max
-    sql: ${TABLE}.frecuency ;;
+    sql: ${TABLE}.frequency ;;
   }
   measure: Impressions {
     type: sum
