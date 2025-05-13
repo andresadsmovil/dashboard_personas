@@ -43,7 +43,7 @@ view: adsmovil_geo_reports_coord {
 
   measure: Clicks {
     type: sum
-    sql: ${TABLE}.clk ;;
+    sql: ${TABLE}.clicks ;;
   }
   measure: CTR {
     type: average
@@ -51,11 +51,11 @@ view: adsmovil_geo_reports_coord {
   }
   measure: Freq {
     type: max
-    sql: ${TABLE}.freq ;;
+    sql: ${TABLE}.frecuency ;;
   }
   measure: Impressions {
     type: sum
-    sql: ${TABLE}.imp ;;
+    sql: ${TABLE}.impressions ;;
   }
   measure: Uniques {
     type: number
