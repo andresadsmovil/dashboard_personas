@@ -58,7 +58,7 @@ view: adsmovil_geo_reports_coord {
     sql: ${TABLE}.impressions ;;
   }
   measure: Uniques {
-    type: number
+    type: sum
     sql: ${TABLE}.uniques ;;
   }
 }
