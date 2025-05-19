@@ -36,7 +36,7 @@ explore: partial_campaign_report {
 
 explore: report_campaign_insights {}
 explore: adsmovil_geo_reports_coord {}
-
+explore: adsmovil_detailed_campaigns {}
 
 
 ## Store Attribution
