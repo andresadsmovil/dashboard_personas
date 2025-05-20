@@ -24,7 +24,10 @@ view: adsmovil_detailed_campaigns {
     type: string
     sql: ${TABLE}.creative_size ;;
   }
-
+  dimension: sale_model {
+    type: string
+    sql: ${TABLE}.sale_model ;;
+  }
   dimension_group: date {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
@@ -56,6 +59,10 @@ view: adsmovil_detailed_campaigns {
   dimension: platform_device_type {
     type: string
     sql: ${TABLE}.platform_device_type ;;
+  }
+  dimension: platform_device_make {
+    type: string
+    sql: ${TABLE}.platform_device_make ;;
   }
   dimension: platform_os {
     type: string
@@ -92,6 +99,13 @@ view: adsmovil_detailed_campaigns {
     type: sum
     sql: ${TABLE}.video_completes ;;
   }
+  measure: total_sale {
+    group_label: "Measures"
+    type: max
+    label: "total_sale"
+    sql: ${TABLE}.total_sale ;;
 
+
+  }
 
 }
