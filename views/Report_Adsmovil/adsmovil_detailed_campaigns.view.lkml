@@ -13,23 +13,18 @@ view: adsmovil_detailed_campaigns {
     type: string
     sql: ${TABLE}.city ;;
   }
+  dimension: logo {
+    type: string
+    sql: ${TABLE}.logo ;;
+    html: <img src='{{ value }}' width='250' height='50'>;;
+  }
 
-  dimension: cpc {
-    type: string
-    sql: ${TABLE}.CPC ;;
-  }
-  dimension: cpm {
-    type: string
-    sql: ${TABLE}.CPM ;;
-  }
+
   dimension: creative_size {
     type: string
     sql: ${TABLE}.creative_size ;;
   }
-  dimension: ctr {
-    type: string
-    sql: ${TABLE}.CTR ;;
-  }
+
   dimension_group: date {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
@@ -70,10 +65,7 @@ view: adsmovil_detailed_campaigns {
     type: string
     sql: ${TABLE}.state ;;
   }
-  dimension: vcr {
-    type: string
-    sql: ${TABLE}.VCR ;;
-  }
+
 
   measure: count {
     type: count
@@ -91,7 +83,7 @@ view: adsmovil_detailed_campaigns {
     group_label: "Measures"
     type: sum
     label: "Clicks"
-    sql: ${TABLE}.impressions ;;
+    sql: ${TABLE}.clicks ;;
 
 
   }
@@ -100,5 +92,6 @@ view: adsmovil_detailed_campaigns {
     type: sum
     sql: ${TABLE}.video_completes ;;
   }
+
 
 }
