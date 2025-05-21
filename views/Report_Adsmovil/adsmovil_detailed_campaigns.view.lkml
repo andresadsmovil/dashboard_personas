@@ -18,8 +18,14 @@ view: adsmovil_detailed_campaigns {
     sql: ${TABLE}.logo ;;
     html: <img src='{{ value }}' width='250' height='50'>;;
   }
-
-
+  dimension: Advertaiser {
+    type: string
+    sql: ${TABLE}.Advertaiser ;;
+  }
+  dimension: Country {
+    type: string
+    sql: ${TABLE}.Country ;;
+  }
   dimension: creative_size {
     type: string
     sql: ${TABLE}.creative_size ;;
@@ -84,14 +90,12 @@ view: adsmovil_detailed_campaigns {
     label: "impressions"
     sql: ${TABLE}.impressions ;;
 
-
   }
   measure: clicks {
     group_label: "Measures"
     type: sum
     label: "Clicks"
     sql: ${TABLE}.clicks ;;
-
 
   }
   measure: video_completes {
