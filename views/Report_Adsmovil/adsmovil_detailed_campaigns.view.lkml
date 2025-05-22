@@ -78,7 +78,18 @@ view: adsmovil_detailed_campaigns {
     type: string
     sql: ${TABLE}.state ;;
   }
-
+  dimension: site_name {
+    type: string
+    sql: ${TABLE}.site_name ;;
+  }
+  dimension: Source {
+    type: string
+    sql: ${TABLE}.Source ;;
+  }
+  dimension: app_bundle {
+    type: string
+    sql: ${TABLE}.app_bundle ;;
+  }
 
   measure: count {
     type: count
@@ -102,6 +113,12 @@ view: adsmovil_detailed_campaigns {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.video_completes ;;
+
+  }
+  measure: video_plays {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_plays ;;
   }
   measure: total_sale {
     group_label: "Measures"
