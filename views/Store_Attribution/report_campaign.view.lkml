@@ -9,6 +9,7 @@ view: report_campaign {
   dimension: campaign_name {
     type: string
     sql: ${TABLE}.campaign_name ;;
+    html: <H4 style= <div style="font-size: 15px; text-align: center;"; style="color:#C14098">{{value}}</H4>;;
   }
   dimension: campaign_id_grouped {
     type: string
