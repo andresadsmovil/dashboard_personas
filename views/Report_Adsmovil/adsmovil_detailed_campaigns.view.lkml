@@ -126,7 +126,15 @@ view: adsmovil_detailed_campaigns {
     label: "total_sale"
     sql: ${TABLE}.total_sale ;;
 
-
   }
-
+  measure: audio_completes {
+    type: sum
+    sql: ${TABLE}.audio_completes ;;
+    value_format: "#,##0"
+  }
+  measure: audio_plays {
+    type: sum
+    sql: ${TABLE}.audio_plays ;;
+    value_format: "#,##0"
+  }
 }
