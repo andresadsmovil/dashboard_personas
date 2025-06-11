@@ -130,11 +130,11 @@ view: adsmovil_detailed_campaigns {
   measure: audio_completes {
     type: sum
     sql: ${TABLE}.audio_completes ;;
-    value_format: "#,##0"
+
   }
   measure: audio_plays {
     type: sum
     sql: ${TABLE}.audio_plays ;;
-    value_format: "#,##0"
+
   }
 }
