@@ -53,3 +53,14 @@ explore: report_pois {}
 explore: report_mobility {}
 explore: report_mobility_attribution {}
 explore: report_mobility_clicks {}
+
+
+
+# GroupM
+explore: partial_campaign_report_group_m {
+  join: global_metrics_campaign {
+    type: inner
+    sql_on: ${partial_campaign_report_group_m.campaign_id} = ${global_metrics_campaign.campaign_id} ;;
+    relationship: many_to_one
+  }
+}
