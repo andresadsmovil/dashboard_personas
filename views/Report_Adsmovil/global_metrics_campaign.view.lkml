@@ -6,6 +6,15 @@ view: global_metrics_campaign {
     primary_key: yes
     sql: ${TABLE}.campaign_id ;;
   }
+  dimension: account_id {
+    type: number
+    sql: ${TABLE}.account_id ;;
+  }
+  dimension: campaign_name {
+    type: string
+    sql: ${TABLE}.campaign_name ;;
+    html: <H4 style= <div style="font-size: 15px; text-align: center;"; style="color:#C14098">{{value}}</H4>;;
+  }
   dimension_group: date {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
