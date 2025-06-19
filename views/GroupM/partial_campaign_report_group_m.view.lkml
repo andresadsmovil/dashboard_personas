@@ -177,6 +177,11 @@ measure: video_completes {
   type: sum
   sql: ${TABLE}.video_completes ;;
 }
+  measure: video_plays {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_plays ;;
+  }
 measure: video_q1s {
   group_label: "Measures"
   type: sum
