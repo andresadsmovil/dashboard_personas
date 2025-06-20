@@ -196,5 +196,31 @@ view: partial_campaign_report {
     group_label: "Measures"
     type: count_distinct
     sql: ${user_id} ;;
-}
+  }
+  measure: audio_plays {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.audio_plays ;;
+  }
+  measure: audio_q1s {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.audio_q1s ;;
+  }
+  measure: audio_midpoints {
+    group_label: "Measures"
+    type: count_distinct
+    sql:  ${TABLE}.audio_midpoints ;;
+  }
+  measure: audio_q3s {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.audio_q3s ;;
+  }
+  measure: audio_completes {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.audio_completes ;;
+  }
+
 }

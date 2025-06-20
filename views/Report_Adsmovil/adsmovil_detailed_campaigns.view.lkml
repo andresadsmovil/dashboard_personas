@@ -13,6 +13,7 @@ view: adsmovil_detailed_campaigns {
     type: string
     sql: ${TABLE}.city ;;
   }
+
   dimension: logo {
     type: string
     sql: ${TABLE}.logo ;;
@@ -89,6 +90,14 @@ view: adsmovil_detailed_campaigns {
   dimension: app_bundle {
     type: string
     sql: ${TABLE}.app_bundle ;;
+  }
+  dimension: content_tittle {
+    type: string
+    sql: ${TABLE}.content_tittle ;;
+  }
+  dimension: content_series {
+    type: string
+    sql: ${TABLE}.content_series ;;
   }
 
   measure: count {
