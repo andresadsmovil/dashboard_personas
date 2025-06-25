@@ -209,7 +209,7 @@ view: partial_campaign_report {
   }
   measure: audio_midpoints {
     group_label: "Measures"
-    type: count_distinct
+    type: sum
     sql:  ${TABLE}.audio_midpoints ;;
   }
   measure: audio_q3s {
