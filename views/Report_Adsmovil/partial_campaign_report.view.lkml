@@ -131,6 +131,14 @@ view: partial_campaign_report {
     type: string
     sql: ${TABLE}.line_item_name ;;
   }
+  dimension: content_series {
+    type: string
+    sql: ${TABLE}.content_series ;;
+  }
+  dimension: content_tittle {
+    type: string
+    sql: ${TABLE}.content_tittle ;;
+  }
   dimension: logo {
     type: string
     sql: ${TABLE}.logo ;;
