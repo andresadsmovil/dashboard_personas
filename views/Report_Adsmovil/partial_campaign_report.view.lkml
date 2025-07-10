@@ -108,6 +108,10 @@ view: partial_campaign_report {
     type: string
     sql: ${TABLE}.platform_device_type ;;
   }
+  dimension: site_name {
+    type: string
+    sql: ${TABLE}.site_name ;;
+  }
   dimension: platform_os {
     type: string
     sql: ${TABLE}.platform_os ;;
