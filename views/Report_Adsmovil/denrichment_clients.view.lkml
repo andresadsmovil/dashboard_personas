@@ -62,6 +62,15 @@ view: denrichment_clients {
   dimension: gender {
     type: string
     sql: ${TABLE}.gender ;;
+    group_label: "Demografía"
+  }
+  dimension: genero_etiqueta {
+    type: string
+    sql: CASE
+          WHEN LOWER(TRIM(${gender})) IN ('f','female','mujer') THEN 'Mujer'
+          WHEN LOWER(TRIM(${gender})) IN ('m','male','hombre') THEN 'Hombre'
+          ELSE 'Otro'
+        END ;;
   }
 
   dimension: nivsocio {
@@ -94,5 +103,28 @@ view: denrichment_clients {
     sql: ${TABLE}.clicks ;;
     value_format: "#,##0"
   }
+  measure: unique_users {
+    type: count_distinct
+    sql: ${unique_id} ;;
+    value_format: "#,##0"
+  }
 
+  measure: gender_percent {
+    type: number
+    sql: 100.0 * ${count} / NULLIF(SUM(${count}) OVER (), 0) ;;
+    value_format: "0.00%"
+  }
+
+  measure: total_usuarios {
+    type: count
+    value_format_name: decimal_0
+    group_label: "Demografía"
+  }
+
+  measure: porcentaje_usuarios {
+    type: number
+    sql: ${total_usuarios} * 100.0 / NULLIF(SUM(${total_usuarios}) OVER (), 0) ;;
+    value_format: "0.00%"
+    group_label: "Demografía"
+  }
 }
