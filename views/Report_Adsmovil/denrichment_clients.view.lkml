@@ -85,6 +85,8 @@ view: denrichment_clients {
     type: string
     sql: ${TABLE}.unique_id ;;
   }
+
+
   measure: count {
     type: count
     drill_fields: [app_name, campaign_name]
