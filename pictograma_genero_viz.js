@@ -18,11 +18,13 @@ looker.plugins.visualizations.add({
   },
   
   create: function (element, config) {
+    const fontAwesomeLink = document.createElement('link');
+    fontAwesomeLink.rel = 'stylesheet';
+    fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
+    document.head.appendChild(fontAwesomeLink);
+
     element.innerHTML = `
       <style>
-        /* PASO 1: Importar la librería de iconos Font Awesome */
-        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
-
         .pictograma-container {
           display: flex;
           align-items: flex-end;
@@ -38,12 +40,12 @@ looker.plugins.visualizations.add({
           align-items: center;
         }
         .icono {
-          font-size: 60px; /* Tamaño del icono */
+          font-size: 60px;
           line-height: 1;
-          color: #fff; /* Color del icono */
+          color: #fff;
         }
         .mujer-bg {
-          background-color: #920072; /* Color de fondo para mujer */
+          background-color: #920072;
           border-radius: 50%;
           padding: 20px;
           width: 60px;
@@ -53,17 +55,7 @@ looker.plugins.visualizations.add({
           justify-content: center;
         }
         .hombre-bg {
-          background-color: #1F2652; /* Color de fondo para hombre */
-          border-radius: 50%;
-          padding: 20px;
-          width: 60px;
-          height: 60px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .otro-bg {
-          background-color: #888; /* Color de fondo para 'otro' */
+          background-color: #1F2652;
           border-radius: 50%;
           padding: 20px;
           width: 60px;
@@ -95,33 +87,26 @@ looker.plugins.visualizations.add({
     let generoField = queryResponse.fields.dimension_like[0].name;
     let uniqueField = queryResponse.fields.measure_like[0].name;
 
-    let conteo = { mujer: 0, hombre: 0, otro: 0 };
-    let total = 0;
+    let conteo = { mujer: 0, hombre: 0 }; // Eliminado 'otro'
+    let total = 0; // Esta variable ya no se usará para porcentajes, pero la dejamos por si acaso
 
     queryResponse.data.forEach(row => {
-      let genero = row[generoField].value ? row[generoField].value.toLowerCase() : "otro";
+      let genero = row[generoField].value ? row[generoField].value.toLowerCase() : "";
       let count = row[uniqueField].value ? parseFloat(row[uniqueField].value) : 0;
       
-      total += count;
-
       if (genero === "mujer") {
         conteo.mujer += count;
       } else if (genero === "hombre") {
         conteo.hombre += count;
-      } else {
-        conteo.otro += count;
       }
     });
 
-    // Esta función ahora recibe código HTML para los iconos
+    // La función ahora muestra el valor exacto, no el porcentaje
     const crearBloque = (label, valor, clase, icono) => {
-      let porcentaje = total > 0 ? ((valor / total) * 100).toFixed(1) + "%" : "0%";
-      
       let div = document.createElement("div");
       div.classList.add("pictograma");
-      // La variable 'icono' se inserta directamente aquí
       div.innerHTML = `
-        <div class="valor">${porcentaje}</div>
+        <div class="valor">${valor.toLocaleString()}</div>
         <div class="${clase}-bg"><div class="icono">${icono}</div></div>
         <div class="label">${label}</div>
       `;
@@ -131,17 +116,8 @@ looker.plugins.visualizations.add({
     let pictogramaContainer = document.createElement("div");
     pictogramaContainer.classList.add("pictograma-container");
     
-    /* 
-     * PASO 2: Reemplazar los emojis por las etiquetas HTML de Font Awesome.
-     * La etiqueta <i> con las clases "fas fa-female" y "fas fa-male" mostrará los iconos.
-    */
     pictogramaContainer.appendChild(crearBloque("Mujer", conteo.mujer, "mujer", '<i class="fas fa-female"></i>'));
     pictogramaContainer.appendChild(crearBloque("Hombre", conteo.hombre, "hombre", '<i class="fas fa-male"></i>'));
-    
-    // He mejorado también el icono para "Otro" para mantener el estilo
-    if (conteo.otro > 0) {
-      pictogramaContainer.appendChild(crearBloque("Otro", conteo.otro, "otro", '<i class="fas fa-user-circle"></i>'));
-    }
     
     this.container.appendChild(pictogramaContainer);
 
