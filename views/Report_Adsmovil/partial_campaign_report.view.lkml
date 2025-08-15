@@ -37,6 +37,10 @@ view: partial_campaign_report {
     sql: ${TABLE}.city ;;
     label: "city"
   }
+  dimension: domain {
+    type: string
+    sql: ${TABLE}.domain ;;
+  }
   dimension: clicks {
     type: number
     sql: ${TABLE}.clicks ;;
