@@ -35,6 +35,6 @@ view: report_mobility {
   measure: qty_user {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.qty_user ;;
+    sql: LOWER(${TABLE}.qty_user) ;;
   }
 }
