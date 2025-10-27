@@ -47,14 +47,12 @@ view: new_report_partial_campaign_report {
   dimension: image_url {
     type: string
     sql: ${TABLE}.image_url ;;
-  }
-  dimension: impressions {
-    type: number
-    sql: ${TABLE}.impressions ;;
+    html: <img src='{{ value }}' width='50' height='50'>;;
   }
   dimension: logo {
     type: string
     sql: ${TABLE}.logo ;;
+    html: <img src='{{ value }}' width='250' height='50'>;;
   }
   dimension: nivsocio_campaign {
     type: string
@@ -73,6 +71,11 @@ view: new_report_partial_campaign_report {
     type: string
     sql: ${TABLE}.state ;;
   }
+  measure: video_q3s {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.video_q3s ;;
+  }
   measure: video_completes {
     group_label: "Measures"
     type: sum
@@ -88,10 +91,10 @@ view: new_report_partial_campaign_report {
     type: sum
     sql: ${TABLE}.video_midpoints ;;
   }
-  measure: video_q3s {
+  measure: impressions {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.video_q3s ;;
+    sql: ${TABLE}.impressions ;;
   }
   measure: video_plays {
     group_label: "Measures"

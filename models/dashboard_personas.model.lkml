@@ -65,3 +65,6 @@ explore: partial_campaign_report_group_m {
     relationship: many_to_one
   }
 }
+
+
+explore: new_report_partial_campaign_report {}

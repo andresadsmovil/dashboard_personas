@@ -25,6 +25,10 @@ view: report_mobility_attribution {
     type: string
     sql: ${TABLE}.ciudad ;;
   }
+  dimension: distance_campaign {
+    type: string
+    sql: ${TABLE}.distance_campaign ;;
+  }
   dimension: neighborhood {
     type: string
     sql: ${TABLE}.localidad_barrio ;;
