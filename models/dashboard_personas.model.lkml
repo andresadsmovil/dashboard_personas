@@ -68,3 +68,5 @@ explore: partial_campaign_report_group_m {
 
 
 explore: new_report_partial_campaign_report {}
+
+explore: partial_campaign_report_by_hour {}
