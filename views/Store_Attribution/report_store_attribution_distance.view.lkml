@@ -1,12 +1,4 @@
 # Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
-explore: report_store_attribution_distance {
-  hidden: yes
-    join: report_store_attribution_distance__distance {
-      view_label: "Report Store Attribution Distance: Distance"
-      sql: LEFT JOIN UNNEST(${report_store_attribution_distance.distance}) as report_store_attribution_distance__distance ;;
-      relationship: one_to_many
-    }
-}
 view: report_store_attribution_distance {
   sql_table_name: `adsmovil-reports.store_attribution.report_store_attribution_distance` ;;
 

@@ -1,3 +1,5 @@
+
+
 connection: "salesforce"
 
 # include all the views
@@ -55,6 +57,14 @@ explore: report_mobility {}
 explore: report_mobility_attribution {}
 explore: report_mobility_clicks {}
 
+explore: report_store_attribution_distance {
+  hidden: yes
+  join: report_store_attribution_distance__distance {
+    view_label: "Report Store Attribution Distance: Distance"
+    sql: LEFT JOIN UNNEST(${report_store_attribution_distance.distance}) as report_store_attribution_distance__distance ;;
+    relationship: one_to_many
+  }
+}
 
 
 # GroupM
