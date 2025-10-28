@@ -134,6 +134,10 @@ view: partial_campaign_report_by_hour {
     type: sum
     sql: ${TABLE}.video_q3s ;;
   }
+  measure: flag_metrics {
+    type: sum
+    sql: ${TABLE}.flag_metrics ;;
+  }
   measure: video_completes {
     type: sum
     sql: ${TABLE}.video_completes ;;
