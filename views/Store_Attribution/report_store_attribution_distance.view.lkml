@@ -48,7 +48,7 @@ view: report_store_attribution_distance {
   }
   dimension: flag {
     type: number
-    sql: CASE WHEN flag_x_1 THEN total_qty_user WHEN flag_x_2 THEN total_qty_user_x_dos WHEN  total_qty_user_x_3 ELSE total_qty_user * 4 END ;;
+    sql: CASE WHEN flag_x_1 THEN total_qty_user WHEN flag_x_2 THEN total_qty_user_x_dos WHEN  flag_x_3 THEN total_qty_user_x_3 ELSE total_qty_user * 4 END ;;
   }
   measure: count {
     type: count
