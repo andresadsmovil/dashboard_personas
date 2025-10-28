@@ -66,8 +66,9 @@ view: partial_campaign_report_by_hour {
   dimension: image_url {
     type: string
     sql: ${TABLE}.image_url ;;
-    html: <img src='{{ value }}' width='50' height='50'>;
+    html: <img src='{{ value }}' width='50' height='50'>;;
   }
+
   dimension: line_country {
     type: string
     sql: ${TABLE}.line_country ;;
