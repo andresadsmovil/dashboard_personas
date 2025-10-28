@@ -17,6 +17,10 @@ view: partial_campaign_report_by_hour {
     type: string
     sql: ${TABLE}.Campaign_Name ;;
   }
+  dimension: numero_linea {
+    type: string
+    sql: ${TABLE}.numero_linea ;;
+  }
   dimension: country {
     type: string
     map_layer_name: countries
