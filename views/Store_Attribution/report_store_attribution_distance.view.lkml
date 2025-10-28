@@ -46,6 +46,10 @@ view: report_store_attribution_distance {
     type: number
     sql: ${TABLE}.total_sale ;;
   }
+  dimension: flag {
+    type: number
+    sql: CASE WHEN flag_x_1 THEN total_qty_user WHEN flag_x_2 THEN total_qty_user_x_dos WHEN  total_qty_user_x_3 ELSE total_qty_user * 4 END ;;
+  }
   measure: count {
     type: count
   }
