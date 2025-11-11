@@ -52,7 +52,7 @@ explore: report_campaign {
   }
 }
 
-explore: bw_viewability_metrics {}
+
 explore: report_pois {}
 explore: report_mobility {}
 explore: report_mobility_attribution {}
