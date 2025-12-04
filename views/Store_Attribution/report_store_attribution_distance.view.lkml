@@ -18,6 +18,10 @@ view: report_store_attribution_distance {
     type: number
     sql: ${TABLE}.distance_to_check ;;
   }
+  dimension: url {
+    type: string
+    sql: ${TABLE}.url ;;
+  }
   dimension: flag_x_1 {
     type: yesno
     sql: ${TABLE}.flag_x_1 ;;
