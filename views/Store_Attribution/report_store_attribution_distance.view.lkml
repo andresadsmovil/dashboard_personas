@@ -21,6 +21,7 @@ view: report_store_attribution_distance {
   dimension: url {
     type: string
     sql: ${TABLE}.url ;;
+    html: <H4 style= <div style="font-size: 15px; text-align: center;"; style="color:#C14098">{{value}}</H4>;;
   }
   dimension: flag_x_1 {
     type: yesno
