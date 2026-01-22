@@ -22,7 +22,7 @@ view: bw_viewability_metrics {
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.Day ;;
+    sql: ${TABLE}.Day_hour ;;
   }
   dimension: impressions {
     type: number
