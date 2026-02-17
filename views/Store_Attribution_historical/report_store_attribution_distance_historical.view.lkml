@@ -18,6 +18,13 @@ view: report_store_attribution_distance_historical {
     type: number
     sql: ${TABLE}.distance_to_check ;;
   }
+  dimension_group: current_date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.current_date ;;
+  }
   dimension: url {
     type: string
     sql: ${TABLE}.url ;;

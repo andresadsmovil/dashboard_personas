@@ -29,6 +29,13 @@ view: report_campaign_historical {
     datatype: date
     sql: ${TABLE}.start_date ;;
   }
+  dimension_group: current_date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.current_date ;;
+  }
   measure: count {
     type: count
     drill_fields: [campaign_name]

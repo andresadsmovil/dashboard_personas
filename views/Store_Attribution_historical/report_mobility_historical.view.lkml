@@ -17,6 +17,13 @@ view: report_mobility_historical{
     type: string
     sql: ${TABLE}.day_of_week ;;
   }
+  dimension_group: current_date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.current_date ;;
+  }
   dimension: lat {
     type: number
     sql: ${TABLE}.lat ;;

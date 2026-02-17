@@ -25,6 +25,13 @@ view: report_mobility_attribution_historical {
     type: string
     sql: ${TABLE}.ciudad ;;
   }
+  dimension_group: current_date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.current_date ;;
+  }
   dimension: distance_campaign {
     type: string
     sql: ${TABLE}.distance_campaign ;;
