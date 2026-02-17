@@ -1,0 +1,69 @@
+# Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
+view: report_store_attribution_distance_historical {
+  sql_table_name: `adsmovil-reports.store_attribution.report_store_attribution_distance_historical` ;;
+
+  dimension: attribution {
+    type: number
+    sql: ${TABLE}.attribution ;;
+  }
+  dimension: campaign {
+    type: number
+    sql: ${TABLE}.campaign ;;
+  }
+  dimension: distance {
+    hidden: yes
+    sql: ${TABLE}.distance ;;
+  }
+  dimension: distance_to_check {
+    type: number
+    sql: ${TABLE}.distance_to_check ;;
+  }
+  dimension: url {
+    type: string
+    sql: ${TABLE}.url ;;
+    html: <H4 style= <div style="font-size: 15px; text-align: center;"; style="color:#C14098">{{value}}</H4>;;
+  }
+  dimension: flag_x_1 {
+    type: yesno
+    sql: ${TABLE}.flag_x_1 ;;
+  }
+  dimension: flag_x_2 {
+    type: yesno
+    sql: ${TABLE}.flag_x_2 ;;
+  }
+  dimension: flag_x_3 {
+    type: yesno
+    sql: ${TABLE}.flag_x_3 ;;
+  }
+  dimension: total_qty_user {
+    type: number
+    sql: ${TABLE}.total_qty_user ;;
+  }
+  dimension: total_qty_user_x_3 {
+    type: number
+    sql: ${TABLE}.total_qty_user_x_3 ;;
+  }
+  dimension: total_qty_user_x_dos {
+    type: number
+    sql: ${TABLE}.total_qty_user_x_dos ;;
+  }
+  dimension: total_sale {
+    type: number
+    sql: ${TABLE}.total_sale ;;
+  }
+  dimension: flag {
+    type: number
+    sql: CASE WHEN flag_x_1 THEN total_qty_user WHEN flag_x_2 THEN total_qty_user_x_dos WHEN  flag_x_3 THEN total_qty_user_x_3 ELSE total_qty_user * 4 END ;;
+  }
+  measure: count {
+    type: count
+  }
+}
+
+view: report_store_attribution_distance__distance_historical {
+
+  dimension: report_store_attribution_distance__distance_historical {
+    type: number
+    sql: report_store_attribution_distance__distance_historical ;;
+  }
+}
