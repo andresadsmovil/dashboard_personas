@@ -61,21 +61,21 @@ view: report_mobility_attribution_historical {
   measure: qty_user_25 {
     group_label: "Measures"
     type: sum
-    sql: CASE WHEN  distance_campaign = '1. 25 Meters' THEN LOWER(${TABLE}.qty_user) ELSE 0 END  ;;
+    sql: CASE WHEN  distance_campaign = '1. 25 Meters' THEN (${TABLE}.qty_user) ELSE 0 END  ;;
   }
   measure: qty_user_50 {
     group_label: "Measures"
     type: sum
-    sql: CASE WHEN  distance_campaign in  ('1. 25 Meters', '2. 50 Meters') THEN LOWER(${TABLE}.qty_user) ELSE 0 END  ;;
+    sql: CASE WHEN  distance_campaign in  ('1. 25 Meters', '2. 50 Meters') THEN (${TABLE}.qty_user) ELSE 0 END  ;;
   }
   measure: qty_user_75 {
     group_label: "Measures"
     type: sum
-    sql: CASE WHEN  distance_campaign in ('1. 25 Meters', '2. 50 Meters', '3. 75 Meters' ) THEN LOWER(${TABLE}.qty_user) ELSE 0 END  ;;
+    sql: CASE WHEN  distance_campaign in ('1. 25 Meters', '2. 50 Meters', '3. 75 Meters' ) THEN (${TABLE}.qty_user) ELSE 0 END  ;;
   }
   measure: qty_user_100 {
     group_label: "Measures"
     type: sum
-    sql: CASE WHEN  distance_campaign in ('1. 25 Meters', '2. 50 Meters', '3. 75 Meters' , '4. 100 Meters' )  THEN LOWER(${TABLE}.qty_user) ELSE 0 END  ;;
+    sql: CASE WHEN  distance_campaign in ('1. 25 Meters', '2. 50 Meters', '3. 75 Meters' , '4. 100 Meters' )  THEN (${TABLE}.qty_user) ELSE 0 END  ;;
   }
 }
