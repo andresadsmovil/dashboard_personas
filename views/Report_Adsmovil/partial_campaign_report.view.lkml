@@ -86,7 +86,7 @@ view: partial_campaign_report {
   dimension: image_url {
     type: string
     sql: ${TABLE}.image_url ;;
-    html: <img src='{{ value }}' width='50' height='50'>;;
+    html: <img src='{{ value }}' width='140'>;;
   }
   dimension: CID {
     type: string
